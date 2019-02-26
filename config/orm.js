@@ -1,7 +1,6 @@
 var connection = require("./connection.js")
-var tableName = "burgers";
 var orm = {
-    selectAll: function(callback) {
+    selectAll: function(tableName, callback) {
         var query = "SELECT * from " + tableName;
         connection.query(query, function(err, data) {
             if(err) {
@@ -13,7 +12,7 @@ var orm = {
         })
     },
 
-    insertOne: function(burger, callback) {
+    insertOne: function(tableName, burger, callback) {
         var query = "INSERT INTO TABLE " + tableName + "(burger_name, devoured) VALUES (?,?)";
         connection.query(query, [burger.name, false] function(err,data) {
             if(err) {
@@ -25,7 +24,7 @@ var orm = {
         })
     },
 
-    updateOne: function(burger, callback) {
+    updateOne: function(tableName, burger, callback) {
         var query = "UPDATE "+tableName+" SET ? WHERE id=?";
         connection.query(query, [devoured:true, burger.id], function(err,data) {
             if(err) {
