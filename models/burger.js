@@ -10,5 +10,10 @@ var burger = {
       callback(data);
     });
   },
+  update: function(objColVals, condition, callback) {
+    orm.update("burgers", objColVals, condition, function(res) {
+      callback(res);
+    });
+  }
 };
 module.exports = burger;
