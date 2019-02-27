@@ -1,7 +1,13 @@
-<li>
-	{{burger_name}}
-	<button class="change-status" data-id="{{id}}" data-newstate="{{devour}}">
-		{{#if devour}}Devour!{{else}}THROW UP!{{/if}}
-	</button>
-	<button class="delete-burger" data-id="{{this.id}}">X</button>
-</li>
+<div class="burger-block">
+	<div class="text-center">
+		{{burger_name}} 
+		<span class="text-right delete-button">
+			<button class="delete-burger" data-id="{{this.id}}">x</button>
+		</span>
+	</div>
+	<div class="text-center main-button">
+		<button class="change-status" data-id="{{id}}" data-newstate="{{devour}}">
+			{{#if devour}}Devour!{{else}}THROW UP!{{/if}}
+		</button>
+	</div>
+</div>

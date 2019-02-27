@@ -49,5 +49,12 @@ $(function() {
           }
         );
       });
+
+      $('.delete-burger').on('mouseover', function() {
+          $(this).css('opacity', '1')
+      })
+      $('.delete-burger').on('mouseout', function() {
+        $(this).css('opacity', '0')
+    })
   });
   

@@ -14,6 +14,12 @@ router.get("/", function(req, res) {
   });
 });
 
+router.get("/api/burgers", function(req, res) {
+    burger.all(function(data) {
+      res.json(data);
+    });
+  });
+
 router.post("/api/burgers", function(req, res) {
   burger.create([
     "burger_name", "devoured"
